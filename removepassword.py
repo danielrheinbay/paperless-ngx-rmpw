@@ -37,7 +37,7 @@ def unlock_pdf(file_path: str):
             ) as pdf:
                 # print("password is working")
                 print("unlocked succesfully")
-                pdf.save(file_path)
+                pdf.save(file_path, deterministic_id=True)
                 break
         except pikepdf.PasswordError:
             print("password is not working")
